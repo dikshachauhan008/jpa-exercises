@@ -1,0 +1,6 @@
+1. EmployeeWithFieldAccess : By default every entity is accessed as field if we dont gi. Entity  will be created with id as primary key and values are saved in the database.
+
+2. In EmployeeWithMixedAccess : Entity table will be created with column id, email_address and username. When we give access type field to the class all the fields in the class is accessed as field.
+cause email is transient so no column will be created for email. and function getEmailAddress is annotated with Access.property so then one column will be created for that too with column name as email_address and one setter will be created for EmailAddress.
+
+3.In EmployeeWithProperty : @Id annotation on the getId() getter method so the provider will use property access to get and set the state of the entity. In EmployeeWithPropertyAccess we can only give the @Id annotation at method as the AccessType.PropertyType is at Entity level.

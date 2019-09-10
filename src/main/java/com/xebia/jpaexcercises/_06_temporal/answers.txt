@@ -1,0 +1,2 @@
+In date of birth field only the date is stored in the database as temporal type is annotated with  Date.
+In registered at field date with proper time is stored in the database as temporal type is anotated with type tiemstamp.

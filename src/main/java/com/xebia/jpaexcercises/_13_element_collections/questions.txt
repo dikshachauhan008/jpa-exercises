@@ -1,0 +1,17 @@
+# Questions
+
+> To make this exercise work, rename 13-persistence.xml to persistence.xml
+> Drop the existing database and recreate the database
+
+```
+drop database jpaex;
+create database jpaex;
+use jpaex;
+```
+
+1. How many tables are created when you run `ElementCollectionApp.java`? What is the structure of generated tables?
+2. What will happen if Employee can have only one item? i.e. rather than List<Item> we have Item.
+3. How can you ensure tables created for Item and NickNames are named `items` and `nick_names`?
+4. How can you ensure tables created for Item and NickNames have primary key with name `emp_id` instead of `Employee_id`?
+5. Are items and nickNames fetched lazily?
+

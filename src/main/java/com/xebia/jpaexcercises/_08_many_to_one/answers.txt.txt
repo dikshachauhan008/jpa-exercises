@@ -1,0 +1,54 @@
+# Questions
+
+> To make this exercise work, rename 08-persistence.xml to persistence.xml
+
+1. How many tables are created in mysql? You can view table using `show tables` command.
+ Ans :Three tables are created viz.
+ a.Department
+ b.Hibernate_sequence
+ c.Employee
+
+
+2. What is the structure of employees table? You can view table structure using `describe employees` command.
+ Ans : In employee table :id, name, salary, department_id
+
+3. What is the structure of departments table? You can view table structure using `describe departments` command.
+Ans : id, name
+
+4. What is the sequence of insert statements? Did Hibernate first inserted to employees and then to departments? Explain why?
+Ans: hibernate insert department first and then employee. It is because when it tries to insert an Employee
+it will encounter a relationship between these two tables and will see if there is related object  in department or
+ not if not it will insert in department first and then in employee.
+
+5. Did hibernate created mapping table?
+Ans: No
+
+6. What will happen if we remove `CascadeType.PERSIST` attribute in `department` field of `Employee` class? Why it happens?
+Ans: If we remove CascadeTypes.PERSIST then an error will occur saying that object is in transient state which is not saved
+. IT happens as that object is related to employee table while inserting employee it will look for department object
+and it found that object is not in table but in an unsaved state.
+
+7. How can we ensure no employee is created without department?
+Ans : By making Nullable=false on the field.
+
+8. What code you will write to create two employees John and Tom associated with IT department?
+Ans: Employee employee1 = new Employee();
+             employee1.setName("John");
+             employee1.setSalary(200_000);
+             employee1.setDepartment(department);
+             entityManager.persist(employee1);
+             Employee employee2 = new Employee();
+             employee2.setName("Tom");
+             employee2.setSalary(300_000);
+             employee2.setDepartment(department);
+             entityManager.persist(employee2);
+
+9. Which of the two entities is the owning side and which of the two is the inverse side?
+Ans: Owning side is Employee entity. There is no inverse side here as it unidirectional.
+
+
+10. How can you change name of the join column from `department_id` to `dept_id`?
+Ans:
+  @JoinColumn(name = "dept_id")
+ on department field of Employee.
+

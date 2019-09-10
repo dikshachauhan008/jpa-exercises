@@ -1,0 +1,15 @@
+# Questions
+
+> To make this exercise work, rename 08-persistence.xml to persistence.xml
+
+1. How many tables are created in mysql? You can view table using `show tables` command.
+2. What is the structure of employees table? You can view table structure using `describe employees` command.
+3. What is the structure of departments table? You can view table structure using `describe departments` command.
+4. What is the sequence of insert statements? Did Hibernate first inserted to employees and then to departments? Explain why?
+5. Did hibernate created mapping table?
+6. What will happen if we remove `CascadeType.PERSIST` attribute in `department` field of `Employee` class? Why it happens?
+7. How can we ensure no employee is created without department?
+8. What code you will write to create two employees John and Tom associated with IT department?
+9. Which of the two entities is the owning side and which of the two is the inverse side?
+10. How can you change name of the join column from `department_id` to `dept_id`?
+

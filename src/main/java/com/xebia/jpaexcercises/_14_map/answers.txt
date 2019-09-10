@@ -1,0 +1,30 @@
+1. How many tables are created? What is the table structure?
+a.phonetype_to_phone_number :emp_id, phone_number,phone_type
+b.employees: id,name
+c.hibernate_sequence
+
+2. How can you ensure that table created for map has name `phone_numbers` instead of `Employee_phoneNumbers`?
+    @CollectionTable(
+           name = "phone_numbers",///for table name
+           joinColumns = @JoinColumn(name = "emp_id")/// for id column in phone_numbers
+               )
+
+3. How can you ensure that primary key of `phone_numbers` table has name `emp_id`?
+    @CollectionTable(
+           name = "phone_numbers",///for table name
+           joinColumns = @JoinColumn(name = "emp_id")/// for id column in phone_numbers
+               )
+
+4. How can you ensure that `phone_numbers` table has following table structure?
+Adding this line to phoneNumber field in Employee.java
+   @MapKeyColumn(name = "phone_type")
+   @Column(name = "phone_number")
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| emp_id       | bigint(20)   | NO   | PRI | NULL    |       |
+| phone_number | varchar(255) | YES  |     | NULL    |       |
+| phone_type   | varchar(255) | NO   | PRI | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+```
+5. How can you store multiple phone numbers with a phone_type i.e. `Map<String, List<String>>`?

@@ -1,0 +1,27 @@
+1. How many tables are created when you run `ElementCollectionApp.java`? What is the structure of generated tables?
+Ans:- 5 Tables will be created  employee_items, employee_nicknames,employees, hibernate_sequence.
+employees will have id and name.
+employee_item will have employee_id, name and pen.
+employee_nicknames will have employee_id and nicknames.
+
+2. What will happen if Employee can have only one item? i.e. rather than List<Item> we have Item.
+In that case item will be inserted in employees table with attribute name and price
+
+3. How can you ensure tables created for Item and NickNames are named `items` and `nick_names`?
+@ElementCollection(fetch = FetchType.LAZY)
+   @CollectionTable(name ="items")
+   private List<Item> items;
+   @ElementCollection
+   @CollectionTable(name = "nick_names")
+   private Set<String> nickNames;
+
+4. How can you ensure tables created for Item and NickNames have primary key with name `emp_id` instead of `Employee_id`?
+@ElementCollection(fetch = FetchType.LAZY)
+       @CollectionTable(name ="items",joinColumns = @JoinColumn(name="emp_id"))
+       private List<Item> items;
+       @ElementCollection
+       @CollectionTable(name = "nick_names",joinColumns = @JoinColumn(name="emp_id"))
+       private Set<String> nickNames;
+
+5. Are items and nickNames fetched lazily?
+Only items are fetched lazily.

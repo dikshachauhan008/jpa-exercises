@@ -1,0 +1,2 @@
+Column log is fetched successfully from the database.This configuration alone is not sufficient because Hibernate requires bytecode
+ instrumentation to intercept  the column.

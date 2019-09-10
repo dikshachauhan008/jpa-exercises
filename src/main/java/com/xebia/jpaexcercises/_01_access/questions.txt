@@ -1,0 +1,3 @@
+# Questions
+
+1. Run the `DbApp.java` with all of the three classes separately and see the resulting table structure

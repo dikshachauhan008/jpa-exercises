@@ -1,0 +1,10 @@
+# Questions
+
+> To run this example, rename `10-persistence.xml` to `persistence.xml`
+
+1. How can you make this example run without any exception?
+2. How many tables will be created? Which table has the foreign key?
+3. How can you rename foreign key name to `plot_id`?
+4. How can you create bidirectional mapping between `Employee` and `ParkingSpace`?
+5. Create an employee and assign them a parking lot. Make sure if you fetch parking employee is also fetched.
+Now, how can you delete the parking lot?

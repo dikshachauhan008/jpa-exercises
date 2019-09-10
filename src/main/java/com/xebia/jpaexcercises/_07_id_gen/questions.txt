@@ -1,0 +1,7 @@
+# Questions
+
+1. Try out @TableGenerator strategy
+2. change initialValue and allocationSize. Why we need it?
+3. Try out id generation using database sequence. What is a sequence?
+4. Find out which id generation strategy is best and when
+5. Should use long id or UUID? Which to use when?

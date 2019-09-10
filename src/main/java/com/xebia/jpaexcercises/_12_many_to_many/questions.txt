@@ -1,0 +1,16 @@
+# Questions
+
+> To make this exercise work, rename 12-persistence.xml to persistence.xml
+> Drop the existing database and recreate the database
+
+```
+drop database jpaex;
+create database jpaex;
+use jpaex;
+```
+
+1. How many tables are created when you run the `ManyToManyApp.java`? Why?
+2. How can you update the entity model so that table structure is correctly generated?
+3. Why we don't need @JoinColumn in @ManyToMany mapping?
+4. How can you ensure that join table is created with name `emp_proj` and has columns `emp_id` and `proj_id`?
+5. Create two employees and add them to a single project? Make sure data is saved to database.

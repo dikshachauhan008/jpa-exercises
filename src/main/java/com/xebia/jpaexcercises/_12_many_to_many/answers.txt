@@ -1,0 +1,41 @@
+# Questions
+
+> To make this exercise work, rename 12-persistence.xml to persistence.xml
+> Drop the existing database and recreate the database
+
+```
+drop database jpaex;
+create database jpaex;
+use jpaex;
+```
+
+1. How many tables are created when you run the `ManyToManyApp.java`? Why?
+Ans: employees
+employees_projects
+hibernate_sequence
+projects
+projects_employees
+
+
+2. How can you update the entity model so that table structure is correctly generated?
+Ans: Adding this line  @ManyToMany(mappedBy = "projects") in Project.java will correct the table structure.
+     or @ManyToMany(mappedBy = "employees") in Employee.java
+
+3. Why we don't need @JoinColumn in @ManyToMany mapping?
+Ans: @joinColumn is used to create column to store foreign key but in case of @manytomany relationship there is a table
+to store relations among tables. So there is need of @JoinTable rather than @JoinColumn.
+
+
+4. How can you ensure that join table is created with name `emp_proj` and has columns `emp_id` and `proj_id`?
+Ans: @JoinTable(name = "emp_proj",joinColumns = @JoinColumn(name = "emp_id"),inverseJoinColumns = @JoinColumn(name="proj_id"))
+Adding this line in Employee will create that table.
+
+5. Create two employees and add them to a single project? Make sure data is saved to database.
+Ans:   use  @ManyToMany(cascade = CascadeType.PERSIST) on ownwer side to persist both table data.
+               Project project=new Project("DEMO PROJECT");
+               Employee employee = new Employee("Test Employee", 1_000_000);
+               Employee employee1 = new Employee("Test1 Employee1", 2_000_000);
+               employee.addProject(project);
+               employee1.addProject(project);
+               entityManager.persist(employee);
+               entityManager.persist(employee1);

@@ -1,0 +1,10 @@
+# Questions
+
+> To make this exercise work, rename 11-persistence.xml to persistence.xml
+
+1. How can you fix the code so that no exception  is thrown?
+2. Once you fix the exception, explain why two `SELECT` queries are fired between `Finding Employee` and `Found Employee`? Can you reduce it to one?
+3. What table structure got created?
+4. Who is the owning side and who is the inverse side?
+5. How many SQL queries will be fired if you find department?
+6. What will happen if you remove `mappedBy` attribute Department.java?

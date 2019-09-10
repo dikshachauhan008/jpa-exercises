@@ -1,0 +1,1 @@
+A table with name employees will be created in the DB because at the entity level I have given the name of the table as employees.

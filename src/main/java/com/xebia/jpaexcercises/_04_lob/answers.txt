@@ -1,0 +1,1 @@
+Image for emoloyee saved in the database successfully as BLOB.

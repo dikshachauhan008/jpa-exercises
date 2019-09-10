@@ -1,0 +1,2 @@
+In the case of ordinal enum integer value corrosponding to the enum type is saved in the database according to the sequence of the enum type starting from 0.
+In the case of String enum corrosponding string value of the enum is saved in the database.

@@ -1,0 +1,9 @@
+# Answer
+
+You have to create database
+
+```
+create database jpaex character set utf8;
+```
+
+https://stackoverflow.com/questions/20014106/how-to-create-this-table-1071-specified-key-was-too-long-max-key-length-is

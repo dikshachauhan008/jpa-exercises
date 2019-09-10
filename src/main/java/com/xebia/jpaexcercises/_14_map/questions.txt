@@ -1,0 +1,25 @@
+# Questions
+
+> To make this exercise work, rename 14-persistence.xml to persistence.xml
+> Drop the existing database and recreate the database
+
+```
+drop database jpaex;
+create database jpaex character set utf8;
+use jpaex;
+```
+
+1. How many tables are created? What is the table structure?
+2. How can you ensure that table created for map has name `phone_numbers` instead of `Employee_phoneNumbers`?
+3. How can you ensure that primary key of `phone_numbers` table has name `emp_id`?
+4. How can you ensure that `phone_numbers` table has following table structure?
+```
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| emp_id       | bigint(20)   | NO   | PRI | NULL    |       |
+| phone_number | varchar(255) | YES  |     | NULL    |       |
+| phone_type   | varchar(255) | NO   | PRI | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+```
+5. How can you store multiple phone numbers with a phone_type i.e. `Map<String, List<String>>`?

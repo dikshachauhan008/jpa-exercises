@@ -1,0 +1,3 @@
+# Questions
+
+1. Run the entity class with `DbApp.java` and verify that column is not fetched from the database
